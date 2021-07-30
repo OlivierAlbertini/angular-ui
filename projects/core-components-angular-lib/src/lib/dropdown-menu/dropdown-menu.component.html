@@ -1,0 +1,10 @@
+<ng-template
+  cdkConnectedOverlay
+  [cdkConnectedOverlayOrigin]="triggerOrigin"
+  [cdkConnectedOverlayOpen]="isOpen"
+  (overlayOutsideClick)="isOpen = false"
+>
+<div class="bao-dropdown-menu">
+  <ng-content></ng-content>
+</div>
+</ng-template>

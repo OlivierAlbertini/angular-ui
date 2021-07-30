@@ -1,0 +1,58 @@
+import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks';
+import { moduleMetadata } from '@storybook/angular';
+import { Overlay } from '@angular/cdk/overlay';
+import { BaoModule, BaoDropDownMenuComponent } from 'core-components-angular-lib';
+
+<Meta title='Dropdown-Menu' decorators={[
+  moduleMetadata({
+      imports: [BaoModule]
+  })
+]} />
+
+# Dropdown-Menu
+
+## Default look
+<Preview>
+  <Story name='dropdown-menu'>{{
+    component: BaoDropDownMenuComponent,
+    template: `
+            <button bao-button (click)="isOpen = !isOpen" type="utility" level="tertiary" cdkOverlayOrigin #trigger="cdkOverlayOrigin">
+              <bao-icon svgIcon="icon-more-vertical"></bao-icon>
+            </button>
+            <bao-dropdown-menu [triggerOrigin]="trigger" [isOpen]="isOpen">
+              <ul>
+                <li bao-dropdown-menu-item>{{ label }}</li>
+                <li bao-dropdown-menu-item>{{ label }}</li>
+                <li bao-dropdown-menu-item>{{ label }}</li>
+              </ul>
+            </bao-dropdown-menu>
+    `,
+    props: {
+      isOpen: false,
+      label: 'Label'
+    },
+  }}</Story>
+</Preview>
+
+## With Icons
+<Preview>
+  <Story name='dropdown-menu with icons'>{{
+    component: BaoDropDownMenuComponent,
+    template: `
+            <button bao-button (click)="isOpen = !isOpen" type="utility" level="tertiary" cdkOverlayOrigin #trigger="cdkOverlayOrigin">
+              <bao-icon svgIcon="icon-more-vertical"></bao-icon>
+            </button>
+            <bao-dropdown-menu [triggerOrigin]="trigger" [isOpen]="isOpen">
+              <ul>
+                <li bao-dropdown-menu-item><bao-icon svgIcon="icon-briefcase"></bao-icon>{{ label }}</li>
+                <li bao-dropdown-menu-item><bao-icon svgIcon="icon-briefcase"></bao-icon>{{ label }}</li>
+                <li bao-dropdown-menu-item><bao-icon svgIcon="icon-briefcase"></bao-icon>{{ label }}</li>
+              </ul>
+            </bao-dropdown-menu>
+    `,
+    props: {
+      isOpen: false,
+      label: 'Label'
+    },
+  }}</Story>
+</Preview>

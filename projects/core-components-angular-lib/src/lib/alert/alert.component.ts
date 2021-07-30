@@ -24,7 +24,7 @@ import {
  * BaoAlertTitle provides no behaviors, instead serving as a purely visual treatment.
  */
 @Directive({
-  selector: 'bao-alert-title',
+  selector: 'bao-alert-title, [bao-alert-title], [baoAlertTitle]',
   host: { class: 'bao-alert-title' }
 })
 export class BaoAlertTitle {}
@@ -37,7 +37,7 @@ export class BaoAlertTitle {}
  * BaoAlertContent provides no behaviors, instead serving as a purely visual treatment.
  */
 @Directive({
-  selector: 'bao-alert-content',
+  selector: 'bao-alert-content, [bao-alert-contente], [baoAlertContent]',
   host: { class: 'bao-alert-content' }
 })
 export class BaoAlertContent {}
@@ -50,7 +50,7 @@ export class BaoAlertContent {}
  * BaoAlertActions provides no behaviors, instead serving as a purely visual treatment.
  */
 @Directive({
-  selector: 'bao-alert-actions',
+  selector: 'bao-alert-actions, [bao-alert-actions], [baoAlertActions]',
   exportAs: 'baoAlertActions',
   host: {
     class: 'bao-alert-actions'
@@ -67,7 +67,7 @@ export class BaoAlertActions {}
  */
 @Directive({
   // tslint:disable-next-line: directive-selector
-  selector: 'bao-alert-link',
+  selector: 'bao-alert-link [bao-alert-link], [baoAlertLink]',
   host: {
     class: 'bao-alert-link'
   }

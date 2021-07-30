@@ -1,0 +1,41 @@
+@import "~@angular/cdk/overlay-prebuilt.css";
+@import "../core/colors";
+
+// menu width must be a multiple of 56px
+$overlay-min-width: 112px !default;   // 56 * 2
+$overlay-max-width: 280px !default;   // 56 * 5
+
+.bao-dropdown-menu {
+  min-width: $overlay-min-width;
+  max-width: $overlay-max-width;
+  padding: 0.5rem 0;
+  margin: 0.25rem 0 0.25rem 0;
+  font-size: 1rem;
+  color: $black;
+  text-align: left;
+  list-style: none;
+  background-color: $white;
+  background-clip: padding-box;
+  border: none;
+  border-radius: 0.25rem;
+  box-shadow: 0rem 0.5rem 2rem rgb(0 0 0 / 10%);
+  >ul{
+    padding-left: 0;
+    >li.bao-dropdown-menu-item {
+      display: flex;
+      align-items: center;
+      padding: 0.5rem 1rem;
+      color: $black;
+      line-height: 1.5rem;
+      margin-bottom: 0;
+      &:hover {
+        background-color: $neutral-underground;
+        background-color: $highlight-light;
+        cursor: pointer;
+      }
+      bao-icon {
+        margin-right: 1rem;
+      }
+    }
+  }
+}

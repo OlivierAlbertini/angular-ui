@@ -12,7 +12,7 @@ const LAST_NODE_ATTRIBUTE = { 'aria-current': 'page' };
   }
 })
 export class BaoBreadcrumbComponent implements AfterViewInit {
-  @ViewChild('container', { static: false }) private staticContainer: ElementRef;
+  @ViewChild('container') private staticContainer: ElementRef;
 
   constructor(private renderer: Renderer2) {}
 
