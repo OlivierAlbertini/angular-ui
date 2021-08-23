@@ -1,0 +1,68 @@
+@import "~@angular/cdk/overlay-prebuilt.css";
+@import "../core/colors";
+@import "../core/typography";
+
+$icon-size: 1.5rem;
+// menu width must be a multiple of 56px
+$overlay-min-width: 256px !default;
+$overlay-max-width: 512 !default;
+
+.bao-dropdown-menu {
+  min-width: $overlay-min-width;
+  max-width: $overlay-max-width;
+  display: inline-block;
+  padding: 0rem;
+  flex-direction: column;
+  align-items: left;
+  background: $white;
+  box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.25rem;
+  margin: 1rem;
+  > ul {
+    padding-left: 0;
+    > .bao-dropdown-menu-item {
+      display: flex;
+      flex-direction: row;
+      background: $transparent;
+      align-items: center;
+      margin-left: 5%;
+      &:hover {
+        background-color: $highlight-light;
+        cursor: pointer;
+      }
+      .bao-icon {
+        margin: auto;
+        width: $icon-size;
+        height: $icon-size;
+        flex-shrink: 0;
+      }
+      > .bao-dropdown-menu-content {
+          display: flex;
+          flex-direction: column;
+          margin: 0.5rem 1rem;
+        > .bao-dropdown-menu-label {
+          @include typo-interface-medium-normal;
+          color: #212529;
+        }
+        > .bao-dropdown-menu-description {
+          @include typo-interface-small;
+          color: #637381;
+        }
+      }
+    }
+    > .bao-dropdown-menu-title {
+      @include typo-interface-medium-bold;
+      list-style-type: none;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+      color: #212529;
+    }
+    > .bao-divider{
+      border:  0.2rem solid  $neutral-secondary;
+    }
+  }
+}

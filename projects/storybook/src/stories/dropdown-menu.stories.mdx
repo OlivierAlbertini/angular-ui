@@ -1,0 +1,273 @@
+import { Meta, Story, Props, Preview } from '@storybook/addon-docs/blocks';
+import { moduleMetadata } from '@storybook/angular';
+import { Overlay } from '@angular/cdk/overlay';
+import { BaoModule, BaoDropDownMenuComponent } from 'core-components-angular-lib';
+
+<Meta
+  title="Dropdown-Menu"
+  decorators={[
+    moduleMetadata({
+      imports: [BaoModule]
+    })
+  ]}
+/>
+
+# Dropdown-Menu
+
+## Default look
+
+<Preview>
+  <Story name="dropdown-menu">
+    {{
+      component: BaoDropDownMenuComponent,
+      template: `
+            <button bao-button (click)="isOpen = !isOpen" type="utility" level="tertiary" cdkOverlayOrigin #trigger="cdkOverlayOrigin">
+              <bao-icon svgIcon="icon-more-vertical"></bao-icon>
+            </button>
+            <bao-dropdown-menu [triggerOrigin]="trigger" [isOpen]="isOpen">
+              <ul>
+                <li bao-dropdown-menu-title>{{ title }}</li>
+                <li bao-dropdown-menu-item>{{ label }}</li>
+                <bao-divider></bao-divider>
+                <li bao-dropdown-menu-item>{{ label }}</li>
+              </ul>
+            </bao-dropdown-menu>
+    `,
+      props: {
+        isOpen: false,
+        label: 'Label',
+        title: 'Title'
+      }
+    }}
+  </Story>
+</Preview>
+
+## With Icons
+
+<Preview>
+  <Story name="dropdown-menu with icons">
+    {{
+      component: BaoDropDownMenuComponent,
+      template: `
+            <button bao-button (click)="isOpen = !isOpen" type="utility" level="tertiary" cdkOverlayOrigin #trigger="cdkOverlayOrigin">
+              <bao-icon svgIcon="icon-more-vertical"></bao-icon>
+            </button>
+            <bao-dropdown-menu [triggerOrigin]="trigger" [isOpen]="isOpen">
+              <ul>
+                <li bao-dropdown-menu-item>
+                  <bao-icon svgIcon="icon-briefcase"></bao-icon>
+                  <bao-dropdown-menu-content>
+                    <bao-dropdown-menu-label>
+                      {{ label }}
+                    </bao-dropdown-menu-label>
+                  </bao-dropdown-menu-content>  
+                </li>
+                <li bao-dropdown-menu-item>
+                  <bao-icon svgIcon="icon-briefcase"></bao-icon>
+                  <bao-dropdown-menu-content>
+                    <bao-dropdown-menu-label>
+                      {{ label }}
+                    </bao-dropdown-menu-label>
+                  </bao-dropdown-menu-content>  
+                </li>
+                <li bao-dropdown-menu-item>
+                  <bao-icon svgIcon="icon-briefcase"></bao-icon>
+                  <bao-dropdown-menu-content>
+                    <bao-dropdown-menu-label>
+                      {{ label }}
+                    </bao-dropdown-menu-label>
+                  </bao-dropdown-menu-content>  
+                </li>
+              </ul>
+            </bao-dropdown-menu>
+    `,
+      props: {
+        isOpen: false,
+        label: 'Label'
+      }
+    }}
+  </Story>
+</Preview>
+
+## With icons and descriptions
+
+<Preview>
+  <Story name="dropdown-menu with icons and descriptions">
+    {{
+      component: BaoDropDownMenuComponent,
+      template: `
+            <button bao-button (click)="isOpen = !isOpen" type="utility" level="tertiary" cdkOverlayOrigin #trigger="cdkOverlayOrigin">
+              <bao-icon svgIcon="icon-more-vertical"></bao-icon>
+            </button>
+            <bao-dropdown-menu [triggerOrigin]="trigger" [isOpen]="isOpen">
+              <ul>
+                <li bao-dropdown-menu-title>{{ title }}</li>
+                <li bao-dropdown-menu-item>
+                    <bao-icon svgIcon="icon-briefcase"></bao-icon>
+                  <bao-dropdown-menu-content>
+                    <bao-dropdown-menu-label>{{ label }}</bao-dropdown-menu-label>
+                    <bao-dropdown-menu-description>{{ description }}</bao-dropdown-menu-description>
+                  </bao-dropdown-menu-content>
+                </li>
+                  <li bao-dropdown-menu-item>
+                    <bao-icon svgIcon="icon-briefcase"></bao-icon>
+                    <bao-dropdown-menu-content>
+                      <bao-dropdown-menu-label>{{ label }}</bao-dropdown-menu-label>
+                      <bao-dropdown-menu-description>{{ description }}</bao-dropdown-menu-description>
+                  </bao-dropdown-menu-content>
+                </li>
+                <li bao-dropdown-menu-item>
+                  <bao-icon svgIcon="icon-briefcase"></bao-icon>
+                  <bao-dropdown-menu-content>
+                    <bao-dropdown-menu-label>{{ label }}</bao-dropdown-menu-label>
+                    <bao-dropdown-menu-description>{{ description }}</bao-dropdown-menu-description>
+                  </bao-dropdown-menu-content>
+                </li>
+                <bao-divider></bao-divider>
+                <li bao-dropdown-menu-item>
+                  <bao-icon svgIcon="icon-briefcase"></bao-icon>
+                  <bao-dropdown-menu-content>
+                    <bao-dropdown-menu-label>{{ label }}</bao-dropdown-menu-label>
+                    <bao-dropdown-menu-description>{{ description }}</bao-dropdown-menu-description>
+                  </bao-dropdown-menu-content>
+                </li>
+                <li bao-dropdown-menu-item>
+                  <bao-icon svgIcon="icon-briefcase"></bao-icon>
+                  <bao-dropdown-menu-content>
+                    <bao-dropdown-menu-label>{{ label }}</bao-dropdown-menu-label>
+                    <bao-dropdown-menu-description>{{ description }}</bao-dropdown-menu-description>
+                  </bao-dropdown-menu-content>
+                </li>
+              </ul>
+            </bao-dropdown-menu>
+    `,
+      props: {
+        isOpen: false,
+        label: 'LabelLabelLabelLabel LabelLabelLabelLabel LabelLabelLabelLabel',
+        description: 'Description',
+        title:'Title'
+      }
+    }}
+  </Story>
+</Preview>
+
+## With switches
+<Preview>
+  <Story name="dropdown-menu with switches">
+    {{
+      component: BaoDropDownMenuComponent,
+      template: `
+            <button bao-button (click)="isOpen = !isOpen" type="utility" level="secondary" cdkOverlayOrigin #trigger="cdkOverlayOrigin" 
+            size="medium" style="margin-right: 1rem;">
+              <span>{{actions}}</span>
+              <bao-icon svgIcon="icon-chevron-down"></bao-icon>
+            </button>
+            <bao-dropdown-menu [triggerOrigin]="trigger" [isOpen]="isOpen">
+              <ul>
+                <li >
+                  <div class="custom-control custom-switch">
+                    <input type="checkbox" class="form-check-input" id="customSwitchDropdown01">
+                    <label class="custom-control-label" for="customSwitchDropdown01">{{ label }}</label>
+                  </div>
+                </li>
+              </ul>
+            </bao-dropdown-menu>
+    `,
+      props: {
+        isOpen: false,
+        label: 'Label',
+        actions:'Actions'
+      }
+    }}
+  </Story>
+</Preview>
+
+## With Radios
+
+<Preview>
+  <Story name="dropdown-menu with Radios">
+    {{
+      component: BaoDropDownMenuComponent,
+      template: `
+            <button bao-button (click)="isOpen = !isOpen" type="utility" level="secondary" cdkOverlayOrigin #trigger="cdkOverlayOrigin">
+              <bao-icon svgIcon="icon-more-vertical"></bao-icon>
+            </button>
+            <bao-dropdown-menu [triggerOrigin]="trigger" [isOpen]="isOpen">
+              <ul>
+                <li bao-dropdown-menu-item>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                      <label class="form-check-label" for="flexRadioDefault1">{{ label }}</label>
+                  </div>
+                </li>
+              </ul>
+            </bao-dropdown-menu>
+    `,
+      props: {
+        isOpen: false,
+        label: 'Label'
+      }
+    }}
+  </Story>
+</Preview>
+
+## With checkbox
+
+<Preview>
+  <Story name="dropdown-menu with checkbox">
+    {{
+      component: BaoDropDownMenuComponent,
+      template: `
+            <button bao-button (click)="isOpen = !isOpen" type="editorial" level="secondary" size="medium" cdkOverlayOrigin 
+            #trigger="cdkOverlayOrigin" style="margin-right: 1rem;">{{ sortBy }}
+            </button>
+            <bao-dropdown-menu [triggerOrigin]="trigger" [isOpen]="isOpen">
+              <ul>
+                <li bao-dropdown-menu-item>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">{{ label }}</label>
+                  </div>
+                </li>       
+              </ul>
+            </bao-dropdown-menu>
+    `,
+      props: {
+        isOpen: false,
+        label: 'Label',
+        sortBy:'Trier par'
+      }
+    }}
+  </Story>
+</Preview>
+
+## With States
+
+<Preview>
+  <Story name="dropdown-menu with States">
+    {{
+      component: BaoDropDownMenuComponent,
+      template: `
+            <button bao-button (click)="isOpen = !isOpen" type="utility" level="tertiary" cdkOverlayOrigin #trigger="cdkOverlayOrigin" 
+            size="medium" style="margin-right: 1rem;">
+              <span>{{actions}}</span>
+              <bao-icon svgIcon="icon-chevron-down"></bao-icon>
+            </button>
+            <bao-dropdown-menu [triggerOrigin]="trigger" [isOpen]="isOpen">
+              <ul>
+                <li bao-dropdown-menu-item><bao-icon svgIcon="icon-dot-bullet" color="icon-color-danger"></bao-icon>{{ label }}</li>
+                <li bao-dropdown-menu-item><bao-icon svgIcon="icon-dot-bullet" color="tertiary"></bao-icon>{{ label }}</li>
+                <div class="dropdown-divider" style="border-color:black;"></div>                
+                <li bao-dropdown-menu-item><bao-icon svgIcon="icon-dot-bullet" color="secondary"></bao-icon>{{ label }}</li>
+                <li bao-dropdown-menu-item><bao-icon svgIcon="icon-dot-bullet" color="informative"></bao-icon>{{ label }}</li>
+              </ul>
+            </bao-dropdown-menu>
+    `,
+      props: {
+        isOpen: false,
+        label: 'label',
+        actions: 'Actions'
+      }
+    }}
+  </Story>
+</Preview>
