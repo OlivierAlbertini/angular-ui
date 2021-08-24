@@ -1,6 +1,9 @@
 @import "~@angular/cdk/overlay-prebuilt.css";
 @import "../core/colors";
 @import "../core/typography";
+@import "../core/radius";
+@import "../core/shadows";
+
 
 $icon-size: 1.5rem;
 // menu width must be a multiple of 56px
@@ -20,19 +23,18 @@ $overlay-max-width: 512 !default;
   margin: 1rem;
   > ul {
     padding-left: 0;
-    > .bao-dropdown-menu-item {
+    > li.bao-dropdown-menu-item{
       display: flex;
       flex-direction: row;
       background: $transparent;
       align-items: center;
       margin-left: 2%;
-      .disabled {
-        pointer-events:none; //This makes it not clickable
-        background:brown ;
+      &.bao-dropdown-menu-item-disabled {
+        color: #637381;
+        cursor: not-allowed;
       }
       &:hover {
-        background-color:cornsilk;
-        cursor: pointer;
+        background-color:$highlight-light
       }
       &:focus {
         color:blue      
@@ -50,6 +52,10 @@ $overlay-max-width: 512 !default;
         > .bao-dropdown-menu-label {
           @include typo-interface-medium-normal;
           color: #212529;
+          &.bao-dropdown-menu-item-disabled {
+            color:#637381;
+            cursor: not-allowed;
+          }
         }
         > .bao-dropdown-menu-description {
           @include typo-interface-small;
@@ -67,9 +73,9 @@ $overlay-max-width: 512 !default;
       list-style-type: none;
       display: flex;
       flex-direction: row;
-      align-items: center;
+      align-items:flex-start;
       text-align: center;
-      justify-content: center;
+      justify-content:left;
       align-items: center;
       color: #212529;
     }

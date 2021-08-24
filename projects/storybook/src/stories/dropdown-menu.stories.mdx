@@ -24,18 +24,21 @@ import { BaoModule, BaoDropDownMenuComponent } from 'core-components-angular-lib
             <button bao-button (click)="isOpen = !isOpen" type="utility" level="tertiary" cdkOverlayOrigin #trigger="cdkOverlayOrigin">
               <bao-icon svgIcon="icon-more-vertical"></bao-icon>
             </button>
-            <bao-dropdown-menu [triggerOrigin]="trigger" [isOpen]="isOpen">
+            <bao-dropdown-menu [triggerOrigin]="trigger"  [isOpen]="isOpen">
               <ul>
-                <li bao-dropdown-menu-item>{{ label }}</li>
-                <li bao-dropdown-menu-item>{{ label }}</li>
-                <li bao-dropdown-menu-item>{{ label }}</li>
+                <li bao-dropdown-menu-item >{{ inProgress }}</li>
+                <li bao-dropdown-menu-item>{{ onBreak }}</li>
+                <li bao-dropdown-menu-item>{{ inReview }}</li>
+                <li bao-dropdown-menu-item>{{ approved }}</li>
               </ul>
             </bao-dropdown-menu>
     `,
       props: {
         isOpen: false,
-        label: 'Label',
-        title: 'Title'
+        inProgress: 'En cours',
+        onBreak: 'En pause',
+        inReview: 'En révision',
+        approved: 'Approuvé ',
       }
     }}
   </Story>
@@ -48,13 +51,13 @@ import { BaoModule, BaoDropDownMenuComponent } from 'core-components-angular-lib
     {{
       component: BaoDropDownMenuComponent,
       template: `
-            <button bao-button (click)="isOpen = !isOpen" type="utility" level="tertiary" cdkOverlayOrigin #trigger="cdkOverlayOrigin">
+            <button bao-button aria-expanded="false" (click)="isOpen = !isOpen" type="utility" level="tertiary" cdkOverlayOrigin #trigger="cdkOverlayOrigin">
               <bao-icon svgIcon="icon-more-vertical"></bao-icon>
             </button>
-            <bao-dropdown-menu [triggerOrigin]="trigger" [isOpen]="isOpen">
+            <bao-dropdown-menu [triggerOrigin]="trigger" [isOpen]="isOpen" >
               <ul>
-                <li bao-dropdown-menu-title>{{ title }}</li>
-                <li bao-dropdown-menu-item class="disabled">{{ label }}</li>
+                <li bao-dropdown-menu-title aria-current="page">{{ title }}</li>
+                <li bao-dropdown-menu-item [isDisabled]="true">{{ label }}</li>
                 <li bao-dropdown-menu-item>{{ label }}</li>
                 <li bao-dropdown-menu-item>{{ label }}</li>
               </ul>
@@ -84,26 +87,26 @@ import { BaoModule, BaoDropDownMenuComponent } from 'core-components-angular-lib
             <bao-dropdown-menu [triggerOrigin]="trigger" [isOpen]="isOpen">
               <ul>
                 <li bao-dropdown-menu-item>
-                  <bao-icon svgIcon="icon-briefcase"></bao-icon>
+                  <bao-icon svgIcon="icon-copy"></bao-icon>
                   <bao-dropdown-menu-content >
                     <bao-dropdown-menu-label>
-                      {{ label }}
+                      {{ copy }}
                     </bao-dropdown-menu-label>
                   </bao-dropdown-menu-content>  
                 </li>
                 <li bao-dropdown-menu-item>
-                  <bao-icon svgIcon="icon-briefcase"></bao-icon>
+                  <bao-icon svgIcon="icon-user"></bao-icon>
                   <bao-dropdown-menu-content>
                     <bao-dropdown-menu-label>
-                      {{ label }}
+                      {{ assign }}
                     </bao-dropdown-menu-label>
                   </bao-dropdown-menu-content>  
                 </li>
                 <li bao-dropdown-menu-item>
-                  <bao-icon svgIcon="icon-briefcase"></bao-icon>
+                  <bao-icon svgIcon="icon-folder"></bao-icon>
                   <bao-dropdown-menu-content>
                     <bao-dropdown-menu-label>
-                      {{ label }}
+                      {{ move }}
                     </bao-dropdown-menu-label>
                   </bao-dropdown-menu-content>  
                 </li>
@@ -111,34 +114,84 @@ import { BaoModule, BaoDropDownMenuComponent } from 'core-components-angular-lib
                 <li bao-dropdown-menu-item>                 
                   <bao-dropdown-menu-content>
                     <bao-dropdown-menu-label>
-                      {{ label }}
+                      {{ archive }}
                     </bao-dropdown-menu-label>
                   </bao-dropdown-menu-content> 
-                  <bao-icon svgIcon="icon-briefcase"></bao-icon> 
+                  <bao-icon svgIcon="icon-archive"></bao-icon> 
                 </li>
                 <li bao-dropdown-menu-item>                 
                   <bao-dropdown-menu-content>
                     <bao-dropdown-menu-label>
-                      {{ label }}
+                      {{ delete }}
                     </bao-dropdown-menu-label>
                   </bao-dropdown-menu-content> 
-                  <bao-icon svgIcon="icon-briefcase"></bao-icon> 
-                </li>
-                <li bao-dropdown-menu-item>                 
-                  <bao-dropdown-menu-content>
-                    <bao-dropdown-menu-label>
-                      {{ label }}
-                    </bao-dropdown-menu-label>
-                  </bao-dropdown-menu-content> 
-                  <bao-icon svgIcon="icon-briefcase"></bao-icon> 
+                  <bao-icon svgIcon="icon-trash"></bao-icon> 
                 </li>
               </ul>
             </bao-dropdown-menu>
     `,
       props: {
         isOpen: false,
-        label: 'Label',
-        actions:'Actions'
+        actions:'Actions',
+        copy:'Dupliquer',
+        assign:'Assigner à ',
+        move:'Deplacer dans',
+        archive:'Archiver',
+        delete:'supprimer',
+      }
+    }}
+  </Story>
+</Preview>
+
+## With desactivated items
+
+<Preview>
+  <Story name="dropdown-menu with desactivated items">
+    {{
+      component: BaoDropDownMenuComponent,
+      template: `
+           <button bao-button (click)="isOpen = !isOpen" type="utility" level="secondary" cdkOverlayOrigin #trigger="cdkOverlayOrigin" 
+            size="medium" style="margin-right: 1rem;">
+              <span>{{actions}}</span>
+              <bao-icon svgIcon="icon-chevron-down"></bao-icon>
+            </button>
+            <bao-dropdown-menu [triggerOrigin]="trigger" [isOpen]="isOpen">
+              <ul>
+                <li bao-dropdown-menu-item>
+                  <bao-icon svgIcon="icon-copy" color="tertiary"></bao-icon>
+                  <bao-dropdown-menu-content >
+                    <bao-dropdown-menu-label [isDisabled]="true">
+                      {{ copy }}
+                    </bao-dropdown-menu-label>
+                  </bao-dropdown-menu-content>  
+                </li>   
+                <li bao-dropdown-menu-item> 
+                  <bao-icon svgIcon="icon-archive"></bao-icon> 
+                  <bao-dropdown-menu-content>
+                    <bao-dropdown-menu-label>
+                      {{ archive }}
+                    </bao-dropdown-menu-label>
+                  </bao-dropdown-menu-content> 
+                </li>
+                <li bao-dropdown-menu-item> 
+                  <bao-icon svgIcon="icon-trash"></bao-icon> 
+                  <bao-dropdown-menu-content>
+                    <bao-dropdown-menu-label>
+                      {{ delete }}
+                    </bao-dropdown-menu-label>
+                  </bao-dropdown-menu-content> 
+                </li>
+              </ul>
+            </bao-dropdown-menu>
+    `,
+      props: {
+        isOpen: false,
+        actions:'Actions',
+        copy:'Dupliquer',
+        assign:'Assigner à ',
+        move:'Deplacer dans',
+        archive:'Archiver',
+        delete:'supprimer',
       }
     }}
   </Story>
@@ -157,39 +210,39 @@ import { BaoModule, BaoDropDownMenuComponent } from 'core-components-angular-lib
             <bao-dropdown-menu [triggerOrigin]="trigger" [isOpen]="isOpen">
               <ul>
                 <li bao-dropdown-menu-title>{{ title }}</li>
-                <li bao-dropdown-menu-item>
-                    <bao-icon svgIcon="icon-briefcase" color="negative"></bao-icon>
+                <li bao-dropdown-menu-item >
+                    <bao-icon svgIcon="icon-user" color="negative"></bao-icon>
                   <bao-dropdown-menu-content>
-                    <bao-dropdown-menu-label>{{ label }}</bao-dropdown-menu-label>
+                    <bao-dropdown-menu-label >{{ firstPerson }}</bao-dropdown-menu-label>
                     <bao-dropdown-menu-description>{{ description }}</bao-dropdown-menu-description>
                   </bao-dropdown-menu-content>
                 </li>
                   <li bao-dropdown-menu-item>
-                    <bao-icon svgIcon="icon-briefcase" color="positive"></bao-icon>
+                    <bao-icon svgIcon="icon-user" color="positive"></bao-icon>
                     <bao-dropdown-menu-content>
-                      <bao-dropdown-menu-label>{{ label }}</bao-dropdown-menu-label>
+                      <bao-dropdown-menu-label>{{ secondPerson }}</bao-dropdown-menu-label>
                       <bao-dropdown-menu-description>{{ description }}</bao-dropdown-menu-description>
                   </bao-dropdown-menu-content>
                 </li>
                 <li bao-dropdown-menu-item>
-                  <bao-icon svgIcon="icon-briefcase" color="warning"></bao-icon>
+                  <bao-icon svgIcon="icon-user" color="warning"></bao-icon>
                   <bao-dropdown-menu-content>
-                    <bao-dropdown-menu-label>{{ label }}</bao-dropdown-menu-label>
+                    <bao-dropdown-menu-label>{{ thirdPerson }}</bao-dropdown-menu-label>
                     <bao-dropdown-menu-description>{{ description }}</bao-dropdown-menu-description>
                   </bao-dropdown-menu-content>
                 </li>
                 <bao-divider></bao-divider>
                 <li bao-dropdown-menu-item>
-                  <bao-icon svgIcon="icon-briefcase" color="informative"></bao-icon>
+                  <bao-icon svgIcon="icon-star" color="informative"></bao-icon>
                   <bao-dropdown-menu-content>
-                    <bao-dropdown-menu-label>{{ label }}</bao-dropdown-menu-label>
+                    <bao-dropdown-menu-label>{{ addToFavourite }}</bao-dropdown-menu-label>
                     <bao-dropdown-menu-description>{{ description }}</bao-dropdown-menu-description>
                   </bao-dropdown-menu-content>
                 </li>
                 <li bao-dropdown-menu-item>
-                  <bao-icon svgIcon="icon-briefcase"></bao-icon>
+                  <bao-icon svgIcon="icon-cut"></bao-icon>
                   <bao-dropdown-menu-content>
-                    <bao-dropdown-menu-label>{{ label }}</bao-dropdown-menu-label>
+                    <bao-dropdown-menu-label>{{ cut }}</bao-dropdown-menu-label>
                     <bao-dropdown-menu-description>{{ description }}</bao-dropdown-menu-description>
                   </bao-dropdown-menu-content>
                 </li>
@@ -198,9 +251,13 @@ import { BaoModule, BaoDropDownMenuComponent } from 'core-components-angular-lib
     `,
       props: {
         isOpen: false,
-        label: 'LabelLabelLabelLabel',
+        firstPerson: 'David',
+        secondPerson: 'Julie',
+        thirdPerson: 'Catherine',
         description: 'Description',
-        title:'Title'
+        addToFavourite:'Ajouter aux favoris',
+        cut:'couper',
+        title:'Ajouter'
       }
     }}
   </Story>
@@ -244,23 +301,26 @@ import { BaoModule, BaoDropDownMenuComponent } from 'core-components-angular-lib
       template: `
             <button bao-button (click)="isOpen = !isOpen" type="utility" level="tertiary" cdkOverlayOrigin #trigger="cdkOverlayOrigin" 
             size="medium" style="margin-right: 1rem;">
-              <span>{{actions}}</span>
+              <span>{{status}}</span>
               <bao-icon svgIcon="icon-chevron-down"></bao-icon>
             </button>
             <bao-dropdown-menu [triggerOrigin]="trigger" [isOpen]="isOpen">
               <ul>
-                <li bao-dropdown-menu-item><bao-icon svgIcon="icon-dot-bullet" color="icon-color-danger"></bao-icon>{{ label }}</li>
-                <li bao-dropdown-menu-item><bao-icon svgIcon="icon-dot-bullet" color="tertiary"></bao-icon>{{ label }}</li>
-                <div class="dropdown-divider" style="border-color:black;"></div>                
-                <li bao-dropdown-menu-item><bao-icon svgIcon="icon-dot-bullet" color="secondary"></bao-icon>{{ label }}</li>
-                <li bao-dropdown-menu-item><bao-icon svgIcon="icon-dot-bullet" color="informative"></bao-icon>{{ label }}</li>
+                <li bao-dropdown-menu-item><bao-icon svgIcon="icon-dot-bullet" color="positive"></bao-icon>{{ onBreak }}</li>
+                <li bao-dropdown-menu-item><bao-icon svgIcon="icon-dot-bullet" color="warning"></bao-icon>{{ inProgress }}</li>
+                <li bao-dropdown-menu-item><bao-icon svgIcon="icon-dot-bullet" color="informative"></bao-icon>{{ inReview }}</li>
+                <li bao-dropdown-menu-item><bao-icon svgIcon="icon-dot-bullet" color="negative"></bao-icon>{{ approved }}</li>
               </ul>
             </bao-dropdown-menu>
     `,
       props: {
         isOpen: false,
         label: 'label',
-        actions: 'Actions'
+        status: 'Statut',
+        inProgress: 'En cours',
+        onBreak: 'En pause',
+        inReview: 'En révision',
+        approved: 'Approuvé ',
       }
     }}
   </Story>

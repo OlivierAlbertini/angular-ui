@@ -25,11 +25,14 @@ export class BaoDividerComponent {}
  */
 @Directive({
   selector: 'bao-dropdown-menu-item, [bao-dropdown-menu-item], [baoDropdownMenuItem]',
-  host: { class: 'bao-dropdown-menu-item' }
+  host: { class: 'bao-dropdown-menu-item',
+  "[class.bao-dropdown-menu-item-disabled]":"isDisabled===true"
+}
 })
 export class BaoDropDownMenuItemComponent {
-
+  @Input() public isDisabled = false;
 }
+
 
 @Directive({
   selector: 'bao-dropdown-menu-title, [bao-dropdown-menu-title], [baoDropdownMenuTitle]',
@@ -44,9 +47,13 @@ export class BaoDropDownMenuTitleComponent {}
 export class BaoDropDownMenuCheckboxComponent {}
 @Directive({
   selector: 'bao-dropdown-menu-label, [bao-dropdown-menu-label], [baoDropdownMenuLabel]',
-  host: { class: 'bao-dropdown-menu-label' }
+  host: { class: 'bao-dropdown-menu-label',
+  "[class.bao-dropdown-menu-item-disabled]":"isDisabled===true" }
 })
-export class BaoDropDownMenuLabelComponent {}
+export class BaoDropDownMenuLabelComponent {
+  @Input() public isDisabled = false;
+
+}
 @Directive({
   selector: 'bao-dropdown-menu-description, [bao-dropdown-menu-description], [baoDropdownMenuDescription]',
   host: { class: 'bao-dropdown-menu-description' }
