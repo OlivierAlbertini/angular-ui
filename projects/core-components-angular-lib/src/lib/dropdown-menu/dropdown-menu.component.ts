@@ -1,4 +1,4 @@
-import {  AfterViewInit, Component, Directive, ElementRef, Input, Renderer2, ViewChild, ViewEncapsulation } from '@angular/core';
+import {  Component, Directive, Input, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'bao-dropdown-menu',
@@ -6,35 +6,11 @@ import {  AfterViewInit, Component, Directive, ElementRef, Input, Renderer2, Vie
   styleUrls: ['./dropdown-menu.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class BaoDropDownMenuComponent implements  AfterViewInit{
+export class BaoDropDownMenuComponent {
 
   @Input() public isOpen = false;
   @Input() public triggerOrigin: any;
   @Input() public width: string = '256px';
-  @ViewChild('dropDownContainer', { static: false }) private staticContainer: ElementRef;
-
-  constructor(private renderer: Renderer2) {}
-  
-  private setWidthAttribute() {
-    console.log("nativeElement1111")
-   console.log( "children",Array.from(this.staticContainer.nativeElement.children));
-
-    console.log("renderer",this.renderer)
-    console.log(this.staticContainer)
-
-    /*const nativeElement = Array.from(this.staticContainer.nativeElement);
-    console.log("222222")
-    console.log(nativeElement)
-    this.renderer.setStyle(nativeElement,"width",180)*/
-  }
-
-  public ngAfterViewInit() {
-    this.setWidthAttribute();
-  }
-
- /* public onContentChange() {
-    this.setWidthAttribute();
-  }*/
 }
 
 @Component({
@@ -61,6 +37,11 @@ export class BaoDropDownMenuItemComponent {
 })
 export class BaoDropDownMenuTitleComponent {}
 
+@Directive({
+  selector: 'bao-dropdown-menu-checkbox, [bao-dropdown-menu-checkbox], [baoDropdownMenuCheckbox]',
+  host: { class: 'bao-dropdown-menu-checkbox' }
+})
+export class BaoDropDownMenuCheckboxComponent {}
 @Directive({
   selector: 'bao-dropdown-menu-label, [bao-dropdown-menu-label], [baoDropdownMenuLabel]',
   host: { class: 'bao-dropdown-menu-label' }
