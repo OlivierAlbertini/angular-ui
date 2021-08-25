@@ -7,8 +7,10 @@
 
 $icon-size: 1.5rem;
 // menu width must be a multiple of 56px
-$overlay-min-width: 256px !default;
-$overlay-max-width: 512 !default;
+$overlay-min-width: 16rem !default;
+$overlay-max-width: 32rem !default;
+$overlay-max-height: 20rem !default;
+
 
 .bao-dropdown-menu {
   min-width: $overlay-min-width;
@@ -23,48 +25,51 @@ $overlay-max-width: 512 !default;
   margin: 1rem;
   > ul {
     padding-left: 0;
-    > li.bao-dropdown-menu-item{
+    max-height: $overlay-max-height;
+    overflow-x: hidden;
+    overflow-y: auto;
+    > .bao-dropdown-menu-item{
       display: flex;
       flex-direction: row;
       background: $transparent;
       align-items: center;
-      margin-left: 2%;
+      margin-left: 0.5rem;
       &.bao-dropdown-menu-item-disabled {
-        color: #637381;
+        color:$neutral-secondary;
         cursor: not-allowed;
       }
       &:hover {
-        background-color:$highlight-light
-      }
-      &:focus {
-        color:blue      
+        background-color: $highlight-light;
+        cursor: pointer;
       }
       .bao-icon {
-        margin: 1%;
+        margin: 0.5;
         width: $icon-size;
         height: $icon-size;
         flex-shrink: 0;
       }
       > .bao-dropdown-menu-content {
           display: flex;
+          flex-basis: 50%;
           flex-direction: column;
           margin: 0.5rem 1rem;
         > .bao-dropdown-menu-label {
           @include typo-interface-medium-normal;
-          color: #212529;
+          color: $black;
           &.bao-dropdown-menu-item-disabled {
-            color:#637381;
+            color: $neutral-secondary;
             cursor: not-allowed;
           }
         }
         > .bao-dropdown-menu-description {
           @include typo-interface-small;
-          color: #637381;
+          color: $neutral-secondary;
         }
         > .bao-dropdown-menu-checkbox {
-          @include typo-interface-small;
-          background-color:aquamarine;
-          margin: 8px;
+          margin: 0.5;
+          width: $icon-size;
+          height: $icon-size;
+          flex-shrink: 0;
         }
       }
     }
@@ -77,7 +82,8 @@ $overlay-max-width: 512 !default;
       text-align: center;
       justify-content:left;
       align-items: center;
-      color: #212529;
+      color:$black;
+      margin-left: 0.5rem;
     }
     > .bao-divider{
       border:  0.2rem solid  $neutral-secondary;
