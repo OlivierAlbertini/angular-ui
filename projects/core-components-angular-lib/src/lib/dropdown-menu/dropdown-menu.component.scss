@@ -20,7 +20,7 @@ $overlay-max-height: 23rem !default;
   flex-direction: column;
   align-items: left;
   background: $white;
-  box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0.5rem 2rem $neutral-underground;
   border-radius: 0.25rem;
   margin: 1rem;
   > ul {
@@ -86,7 +86,8 @@ $overlay-max-height: 23rem !default;
       margin-left: 0.5rem;
     }
     > .bao-divider{
-      border:  0.2rem solid  $neutral-secondary;
+      border:  0.2rem solid  $neutral-tertiary;
+      color: $neutral-stroke;
     }
   }
 }
