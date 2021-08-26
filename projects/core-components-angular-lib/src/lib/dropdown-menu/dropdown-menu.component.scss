@@ -51,7 +51,7 @@ $overlay-max-height: 23rem !default;
           margin: 0.5rem 1rem;
         > .bao-dropdown-menu-label {
           @include typo-interface-medium-normal;
-          color: $primary;
+          color: $neutral-secondary; // a revoir
         }
         > .bao-dropdown-menu-description {
           @include typo-interface-small;
