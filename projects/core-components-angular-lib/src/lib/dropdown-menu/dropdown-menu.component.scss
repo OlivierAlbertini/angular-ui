@@ -17,12 +17,10 @@ $overlay-max-height: 23rem !default;
   max-width: $overlay-max-width;
   display: inline-block;
   padding: 0rem;
-  flex-direction: column;
-  align-items: left;
   background: $white;
-  box-shadow: 0 0.5rem 2rem $neutral-underground;
+  box-shadow: 0 0.5rem 2rem 0 rgba(0,0,0,0.10);
   border-radius: 0.25rem;
-  margin: 1rem;
+  margin-top: 0.25rem;
   > ul {
     padding-left: 0;
     max-height: $overlay-max-height;
@@ -33,12 +31,9 @@ $overlay-max-height: 23rem !default;
       flex-direction: row;
       background: $transparent;
       align-items: center;
-      margin-left: 0.5rem;
-      &.bao-dropdown-menu-item-disabled {
-        color:$neutral-secondary;
-        cursor: not-allowed;
-      }
-      &:hover {
+      padding: 0.5rem 1rem;
+
+      &:hover:not(.bao-dropdown-menu-item-disabled){
         background-color: $highlight-light;
         cursor: pointer;
       }
@@ -47,6 +42,7 @@ $overlay-max-height: 23rem !default;
         width: $icon-size;
         height: $icon-size;
         flex-shrink: 0;
+        color: $neutral-tertiary;
       }
       > .bao-dropdown-menu-content {
           display: flex;
@@ -55,11 +51,7 @@ $overlay-max-height: 23rem !default;
           margin: 0.5rem 1rem;
         > .bao-dropdown-menu-label {
           @include typo-interface-medium-normal;
-          color: $black;
-          &.bao-dropdown-menu-item-disabled {
-            color: $neutral-secondary;
-            cursor: not-allowed;
-          }
+          color: $primary;
         }
         > .bao-dropdown-menu-description {
           @include typo-interface-small;
@@ -72,16 +64,20 @@ $overlay-max-height: 23rem !default;
           flex-shrink: 0;
         }
       }
+      &.bao-dropdown-menu-item-disabled {
+        cursor: not-allowed;
+        & .bao-dropdown-menu-label{
+          color: $neutral-tertiary ;
+        }
+        & .bao-dropdown-menu-description{
+          color: $neutral-tertiary;
+        }
+      }
     }
     > .bao-dropdown-menu-title {
       @include typo-interface-medium-bold;
       list-style-type: none;
-      display: flex;
-      flex-direction: row;
-      align-items:flex-start;
-      text-align: center;
-      justify-content:left;
-      align-items: center;
+      text-align: left;
       color:$black;
       margin-left: 0.5rem;
     }

@@ -307,10 +307,10 @@ import { BaoModule, BaoDropDownMenuComponent } from 'core-components-angular-lib
             </button>
             <bao-dropdown-menu [triggerOrigin]="trigger" [isOpen]="isOpen">
               <ul>
-                <li bao-dropdown-menu-item>
+                <li bao-dropdown-menu-item [isDisabled]="true">
                   <bao-icon svgIcon="icon-copy" color="tertiary"></bao-icon>
                   <bao-dropdown-menu-content >
-                    <bao-dropdown-menu-label [isDisabled]="true">
+                    <bao-dropdown-menu-label >
                       {{ copy }}
                     </bao-dropdown-menu-label>
                   </bao-dropdown-menu-content>  
@@ -323,10 +323,10 @@ import { BaoModule, BaoDropDownMenuComponent } from 'core-components-angular-lib
                     </bao-dropdown-menu-label>
                   </bao-dropdown-menu-content> 
                 </li>
-                <li bao-dropdown-menu-item> 
+                <li bao-dropdown-menu-item [isDisabled]="true"> 
                   <bao-icon svgIcon="icon-trash"></bao-icon> 
                   <bao-dropdown-menu-content>
-                    <bao-dropdown-menu-label [isDisabled]="true">
+                    <bao-dropdown-menu-label >
                       {{ delete }}
                     </bao-dropdown-menu-label>
                   </bao-dropdown-menu-content> 
@@ -408,119 +408,6 @@ import { BaoModule, BaoDropDownMenuComponent } from 'core-components-angular-lib
         addToFavourite:'Ajouter aux favoris',
         cut:'couper',
         title:'Ajouter'
-      }
-    }}
-  </Story>
-</Preview>
-
-## With Checkbox
-
-<Preview>
-  <Story name="dropdown-menu with Checkbox">
-    {{
-      component: BaoDropDownMenuComponent,
-      template: `
-            <button bao-button (click)="isOpen = !isOpen" aria-expanded="isOpen" type="utility" level="secondary" cdkOverlayOrigin #trigger="cdkOverlayOrigin">
-              <span>{{fruits}}</span>
-              <bao-icon svgIcon="icon-chevron-down"></bao-icon>
-            </button>
-            <bao-dropdown-menu [triggerOrigin]="trigger" [isOpen]="isOpen">
-              <ul>
-                <li bao-dropdown-menu-item>
-                  <input bao-dropdown-menu-checkbox type="checkbox" checked >
-                  <bao-dropdown-menu-content>
-                    <label bao-dropdown-menu-label>{{apple}}</label>
-                  </bao-dropdown-menu-content>
-                </li>
-                 <li bao-dropdown-menu-item>
-                  <input bao-dropdown-menu-checkbox type="checkbox">
-                  <bao-dropdown-menu-content>
-                    <label bao-dropdown-menu-label>{{orange}}</label>
-                  </bao-dropdown-menu-content>
-                </li>
-                <li bao-dropdown-menu-item>
-                  <input bao-dropdown-menu-checkbox type="checkbox" >
-                  <bao-dropdown-menu-content>
-                    <label bao-dropdown-menu-label>{{banana}}</label>
-                  </bao-dropdown-menu-content>
-                </li>
-                <li bao-dropdown-menu-item>
-                  <input bao-dropdown-menu-checkbox type="checkbox" >
-                  <bao-dropdown-menu-content>
-                    <label bao-dropdown-menu-label>{{graps}}</label>
-                  </bao-dropdown-menu-content>
-                </li>
-              </ul>
-            </bao-dropdown-menu>
-    `,
-      props: {
-        isOpen: false,
-        fruits: 'Fruits',
-        apple: 'Pomme',
-        orange: 'Orange',
-        banana: 'Banane',
-        graps: 'raisins',
-      }
-    }}
-  </Story>
-</Preview>
-
-## With States
-
-<Preview>
-  <Story name="dropdown-menu with States">
-    {{
-      component: BaoDropDownMenuComponent,
-      template: `
-            <button bao-button (click)="isOpen = !isOpen" aria-expanded="isOpen" type="utility" level="tertiary" cdkOverlayOrigin #trigger="cdkOverlayOrigin" 
-            size="medium" style="margin-right: 1rem;">
-              <span>{{status}}</span>
-              <bao-icon svgIcon="icon-chevron-down"></bao-icon>
-            </button>
-            <bao-dropdown-menu [triggerOrigin]="trigger" [isOpen]="isOpen">
-              <ul>
-                <li bao-dropdown-menu-item>
-                  <bao-icon svgIcon="icon-dot-bullet" color="negative"></bao-icon>
-                  <bao-dropdown-menu-content >
-                    <bao-dropdown-menu-label>
-                      {{ onBreak }}
-                    </bao-dropdown-menu-label>
-                  </bao-dropdown-menu-content >
-                </li>
-                <li bao-dropdown-menu-item>
-                  <bao-icon svgIcon="icon-dot-bullet" color="informative"></bao-icon>
-                  <bao-dropdown-menu-content >
-                    <bao-dropdown-menu-label>
-                      {{ inProgress }}
-                    </bao-dropdown-menu-label>
-                  </bao-dropdown-menu-content >
-                </li>
-                <li bao-dropdown-menu-item>
-                  <bao-icon svgIcon="icon-dot-bullet" color="warning"></bao-icon>
-                  <bao-dropdown-menu-content >
-                    <bao-dropdown-menu-label>
-                      {{ inReview }}
-                    </bao-dropdown-menu-label>
-                  </bao-dropdown-menu-content >
-                </li>
-                <li bao-dropdown-menu-item>
-                  <bao-icon svgIcon="icon-dot-bullet" color="positive"></bao-icon>
-                  <bao-dropdown-menu-content >
-                    <bao-dropdown-menu-label>
-                      {{ approved }}
-                    </bao-dropdown-menu-label>
-                  </bao-dropdown-menu-content >
-                </li>
-              </ul>
-            </bao-dropdown-menu>
-    `,
-      props: {
-        isOpen: false,
-        status: 'Statut',
-        inProgress: 'En cours',
-        onBreak: 'En pause',
-        inReview: 'En révision',
-        approved: 'Approuvé ',
       }
     }}
   </Story>
