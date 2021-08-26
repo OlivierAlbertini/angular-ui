@@ -15,7 +15,8 @@ import { BaoTagModule } from './tag/module';
     BaoAlertModule,
     BaoBreadcrumbModule,
     BaoCardModule,
-    BaoTagModule
+    BaoTagModule,
+    BaoDropDownMenuModule
     // TODO: reactivate once component does not depend on global css BaoBadgeModule,
     // TODO: reactivate once component does not depend on global css BaoSnackBarModule,
     // TODO: reactivate once component does not depend on global css BaoHeaderInfoModule
