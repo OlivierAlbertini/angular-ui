@@ -32,7 +32,6 @@ $overlay-max-height: 23rem !default;
       background: $transparent;
       align-items: center;
       padding: 0.5rem 1rem;
-
       &:hover:not(.bao-dropdown-menu-item-disabled){
         background-color: $highlight-light;
         cursor: pointer;
@@ -46,22 +45,21 @@ $overlay-max-height: 23rem !default;
       }
       > .bao-dropdown-menu-content {
           display: flex;
-          flex-basis: 50%;
+          flex-basis: 100%;
           flex-direction: column;
-          margin: 0.5rem 1rem;
+          > a:link {
+            border-bottom: none;
+          }
+          > a:visited {
+            @include typo-interface-medium-normal;
+          }
         > .bao-dropdown-menu-label {
           @include typo-interface-medium-normal;
-          color: $neutral-secondary; // a revoir
+          color: $ground-reversed; // a revoir
         }
         > .bao-dropdown-menu-description {
           @include typo-interface-small;
           color: $neutral-secondary;
-        }
-        > .bao-dropdown-menu-checkbox {
-          margin: 0.5;
-          width: $icon-size;
-          height: $icon-size;
-          flex-shrink: 0;
         }
       }
       &.bao-dropdown-menu-item-disabled {
@@ -79,7 +77,7 @@ $overlay-max-height: 23rem !default;
       list-style-type: none;
       text-align: left;
       color:$black;
-      margin-left: 0.5rem;
+      padding: 0.5rem 1rem;
     }
     > .bao-divider{
       border:  0.2rem solid  $neutral-tertiary;
