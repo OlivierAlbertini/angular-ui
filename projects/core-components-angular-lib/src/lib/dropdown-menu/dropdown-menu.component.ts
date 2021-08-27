@@ -1,14 +1,42 @@
-import { Component, Directive, Input, ViewEncapsulation } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  Directive,
+  EventEmitter,
+  Input,
+  Output,
+  ViewEncapsulation
+} from '@angular/core';
 
 @Component({
   selector: 'bao-dropdown-menu',
   templateUrl: './dropdown-menu.component.html',
   styleUrls: ['./dropdown-menu.component.scss'],
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class BaoDropDownMenuComponent {
+  /**
+   * Is the dropwdown menu currently open
+   */
   @Input() public isOpen = false;
+  /**
+   * The origin for the dropdown-menu
+   */
   @Input() public triggerOrigin: any;
+  /**
+   * Should the dropdown menu be closed when the user clicks outside the menu
+   */
+  @Input() public closeOnClickOutside = true;
+  /**
+   * Fired when the dropdown-menu changes it's `isOpen` value itself
+   */
+  @Output() public isOpenChange = new EventEmitter<boolean>();
+
+  public onBackdropClick() {
+    this.isOpen = false;
+    this.isOpenChange.emit(this.isOpen);
+  }
 }
 @Component({
   selector: 'bao-divider, [bao-divider], [baoDivider]',
@@ -40,11 +68,9 @@ export class BaoDropDownMenuTitleComponent {}
 export class BaoDropDownMenuCheckboxComponent {}
 @Directive({
   selector: 'bao-dropdown-menu-label, [bao-dropdown-menu-label], [baoDropdownMenuLabel]',
-  host: { class: 'bao-dropdown-menu-label'}
+  host: { class: 'bao-dropdown-menu-label' }
 })
-export class BaoDropDownMenuLabelComponent {
-  
-}
+export class BaoDropDownMenuLabelComponent {}
 @Directive({
   selector: 'bao-dropdown-menu-description, [bao-dropdown-menu-description], [baoDropdownMenuDescription]',
   host: { class: 'bao-dropdown-menu-description' }

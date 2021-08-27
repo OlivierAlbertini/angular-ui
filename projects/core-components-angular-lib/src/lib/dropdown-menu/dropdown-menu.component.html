@@ -2,6 +2,9 @@
   cdkConnectedOverlay
   [cdkConnectedOverlayOrigin]="triggerOrigin"
   [cdkConnectedOverlayOpen]="isOpen"
+  [cdkConnectedOverlayHasBackdrop]="closeOnClickOutside"
+  cdkConnectedOverlayBackdropClass="bao-overlay-transparent-backdrop"
+  (backdropClick)="onBackdropClick()"
   >
 <div class="bao-dropdown-menu">
   <ng-content></ng-content>
