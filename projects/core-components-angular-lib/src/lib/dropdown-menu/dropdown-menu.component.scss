@@ -1,9 +1,9 @@
-@import "~@angular/cdk/overlay-prebuilt.css";
-@import "../core/colors";
-@import "../core/typography";
-@import "../core/radius";
-@import "../core/shadows";
-@import "../core/overlay";
+@import '~@angular/cdk/overlay-prebuilt.css';
+@import '../core/colors';
+@import '../core/typography';
+@import '../core/radius';
+@import '../core/shadows';
+@import '../core/overlay';
 
 $icon-size: 1.5rem;
 // menu width must be a multiple of 56px
@@ -21,40 +21,44 @@ $overlay-max-height: 23rem !default;
   display: inline-block;
   padding: 0rem;
   background: $white;
-  box-shadow: 0 0.5rem 2rem 0 rgba(0,0,0,0.10);
+  box-shadow: 0 0.5rem 2rem 0 rgba(0, 0, 0, 0.1);
   border-radius: 0.25rem;
   margin-top: 0.25rem;
   > ul {
     padding-left: 0;
     max-height: $overlay-max-height;
+    margin: 0.5rem 0rem;
     overflow-x: hidden;
     overflow-y: auto;
-    > .bao-dropdown-menu-item{
+    > .bao-dropdown-menu-item {
       display: flex;
       flex-direction: row;
+      flex-basis: 100%;
       background: $transparent;
       align-items: center;
       padding: 0.5rem 1rem;
       @include typo-interface-medium-normal;
-      color: $ground-reversed;
-      &:hover:not(.bao-dropdown-menu-item-disabled){
-        background-color: $highlight-light;
+      &:hover:not(.bao-dropdown-menu-item-disabled) {
+        background-color: #F8F9FA;
         cursor: pointer;
+      }
+      &.bao-dropdown-menu-current-page{
+        background-color:$highlight-light;
       }
       .bao-icon {
         width: $icon-size;
         height: $icon-size;
         flex-shrink: 0;
         color: $neutral-tertiary;
+        margin-right: 1rem;
       }
       > .bao-dropdown-menu-content {
-          display: flex;
-          flex-basis: 100%;
-          flex-direction: column;
-          padding-left: 1rem;
+        display: flex;
+        flex-basis: 100%;
+        flex-direction: column;
         > .bao-dropdown-menu-label {
           @include typo-interface-medium-normal;
-          color: $ground-reversed; 
+          color: $ground-reversed;
         }
         > .bao-dropdown-menu-description {
           @include typo-interface-small;
@@ -63,18 +67,17 @@ $overlay-max-height: 23rem !default;
       }
       &.bao-dropdown-menu-item-disabled {
         cursor: not-allowed;
-        color: $neutral-tertiary ;
-        & .bao-dropdown-menu-label{
-          color: $neutral-tertiary ;
+        color: $neutral-tertiary;
+        & .bao-dropdown-menu-label {
+          color: $neutral-tertiary;
         }
-        & .bao-dropdown-menu-description{
+        & .bao-dropdown-menu-description {
           color: $neutral-tertiary;
         }
       }
       > .bao-dropdown-menu-label {
         @include typo-interface-medium-normal;
         color: $ground-reversed;
-        flex-basis: 100%; 
       }
       > a:link {
         border-bottom: none;
@@ -87,12 +90,13 @@ $overlay-max-height: 23rem !default;
       @include typo-interface-medium-bold;
       list-style-type: none;
       text-align: left;
-      color:$black;
+      color: $black;
       padding: 0.5rem 1rem;
     }
-    > .bao-divider{
-      border:  0.2rem solid  $neutral-tertiary;
-      color: $neutral-stroke;
+    > .bao-divider hr{
+      border-top: 0.1rem solid $neutral-stroke;
+      margin: 0.5rem 0rem;
     }
   }
 }
+

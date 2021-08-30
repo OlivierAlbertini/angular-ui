@@ -317,7 +317,7 @@ import { BaoModule, BaoDropDownMenuComponent } from 'core-components-angular-lib
             </button>
             <bao-dropdown-menu [triggerOrigin]="trigger" [(isOpen)]="isOpen">
               <ul>
-                <li bao-dropdown-menu-item>
+                <li bao-dropdown-menu-item [isCurrent]="true">
                     <a bao-dropdown-menu-label href="#"  aria-current="page">
                       {{ label }}
                     </a>

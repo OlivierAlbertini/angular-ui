@@ -42,7 +42,7 @@ export class BaoDropDownMenuComponent {
   selector: 'bao-divider, [bao-divider], [baoDivider]',
   templateUrl: 'divider.html',
   encapsulation: ViewEncapsulation.None,
-  host: { class: 'divider' }
+  host: { class: 'bao-divider' }
 })
 export class BaoDividerComponent {}
 /**
@@ -50,10 +50,11 @@ export class BaoDividerComponent {}
  */
 @Directive({
   selector: 'bao-dropdown-menu-item, [bao-dropdown-menu-item], [baoDropdownMenuItem]',
-  host: { class: 'bao-dropdown-menu-item', '[class.bao-dropdown-menu-item-disabled]': 'isDisabled===true' }
+  host: { class: 'bao-dropdown-menu-item', '[class.bao-dropdown-menu-item-disabled]': 'isDisabled===true','[class.bao-dropdown-menu-current-page]': 'isCurrent===true' }
 })
 export class BaoDropDownMenuItemComponent {
   @Input() public isDisabled = false;
+  @Input() public isCurrent = false;
 }
 @Directive({
   selector: 'bao-dropdown-menu-title, [bao-dropdown-menu-title], [baoDropdownMenuTitle]',
