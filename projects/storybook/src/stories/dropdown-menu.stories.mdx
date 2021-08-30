@@ -24,7 +24,7 @@ import { BaoModule, BaoDropDownMenuComponent } from 'core-components-angular-lib
             <button bao-button aria-expanded="isOpen" (click)="isOpen = !isOpen" type="utility" level="tertiary" cdkOverlayOrigin #trigger="cdkOverlayOrigin">
               <bao-icon svgIcon="icon-more-vertical"></bao-icon>
             </button>
-            <bao-dropdown-menu [triggerOrigin]="trigger" class="visible-scrollbar" [isOpen]="isOpen">
+            <bao-dropdown-menu [triggerOrigin]="trigger" class="visible-scrollbar" [(isOpen)]="isOpen">
               <ul>
                 <li bao-dropdown-menu-item [isDisabled]="false">                  
                     <bao-dropdown-menu-label>
@@ -71,7 +71,7 @@ import { BaoModule, BaoDropDownMenuComponent } from 'core-components-angular-lib
             <button bao-button aria-expanded="isOpen" (click)="isOpen = !isOpen" type="utility" level="tertiary" cdkOverlayOrigin #trigger="cdkOverlayOrigin">
               <bao-icon svgIcon="icon-chevron-right"></bao-icon>
             </button>
-            <bao-dropdown-menu [triggerOrigin]="trigger" class="visible-scrollbar" [isOpen]="isOpen">
+            <bao-dropdown-menu [triggerOrigin]="trigger" class="visible-scrollbar" [(isOpen)]="isOpen">
               <ul>
                <li bao-dropdown-menu-item >                  
                     <bao-dropdown-menu-label>
@@ -154,7 +154,7 @@ import { BaoModule, BaoDropDownMenuComponent } from 'core-components-angular-lib
             <button bao-button (click)="isOpen = !isOpen" aria-expanded="isOpen" type="utility" level="tertiary" cdkOverlayOrigin #trigger="cdkOverlayOrigin">
               <bao-icon svgIcon="icon-chevron-up"></bao-icon>
             </button>
-            <bao-dropdown-menu [triggerOrigin]="trigger" [isOpen]="isOpen" >
+            <bao-dropdown-menu [triggerOrigin]="trigger" [(isOpen)]="isOpen" >
               <ul>
                 <li bao-dropdown-menu-title aria-current="page">{{ title }}</li>
                 <li bao-dropdown-menu-item >                  
@@ -196,7 +196,7 @@ import { BaoModule, BaoDropDownMenuComponent } from 'core-components-angular-lib
               <span>{{actions}}</span>
               <bao-icon svgIcon="icon-chevron-down"></bao-icon>
             </button>
-            <bao-dropdown-menu [triggerOrigin]="trigger" [isOpen]="isOpen">
+            <bao-dropdown-menu [triggerOrigin]="trigger" [(isOpen)]="isOpen">
               <ul>
                 <li bao-dropdown-menu-item>
                   <bao-icon svgIcon="icon-copy"></bao-icon>
@@ -242,7 +242,7 @@ import { BaoModule, BaoDropDownMenuComponent } from 'core-components-angular-lib
               <span>{{actions}}</span>
               <bao-icon svgIcon="icon-chevron-up"></bao-icon>
             </button>
-            <bao-dropdown-menu [triggerOrigin]="trigger" [isOpen]="isOpen">
+            <bao-dropdown-menu [triggerOrigin]="trigger" [(isOpen)]="isOpen">
               <ul>
                 <li bao-dropdown-menu-item [isDisabled]="true">
                   <bao-icon svgIcon="icon-copy" color="tertiary"></bao-icon>
@@ -286,7 +286,7 @@ import { BaoModule, BaoDropDownMenuComponent } from 'core-components-angular-lib
             <button bao-button (click)="isOpen = !isOpen" aria-expanded="isOpen" type="utility" level="tertiary" cdkOverlayOrigin #trigger="cdkOverlayOrigin">
               <bao-icon svgIcon="icon-more-vertical"></bao-icon>
             </button>
-            <bao-dropdown-menu [triggerOrigin]="trigger" [isOpen]="isOpen">
+            <bao-dropdown-menu [triggerOrigin]="trigger" [(isOpen)]="isOpen">
               <ul>
                 <li bao-dropdown-menu-title>{{ title }}</li>
                 <li bao-dropdown-menu-item >
@@ -353,7 +353,7 @@ import { BaoModule, BaoDropDownMenuComponent } from 'core-components-angular-lib
             size="medium" style="margin-right: 1rem;">    
               <bao-icon svgIcon="icon-chevron-down"></bao-icon>
             </button>
-            <bao-dropdown-menu [triggerOrigin]="trigger" [isOpen]="isOpen">
+            <bao-dropdown-menu [triggerOrigin]="trigger" [(isOpen)]="isOpen">
               <ul>
                 <li bao-dropdown-menu-item>
                     <a bao-dropdown-menu-label href="#"  aria-current="page">
