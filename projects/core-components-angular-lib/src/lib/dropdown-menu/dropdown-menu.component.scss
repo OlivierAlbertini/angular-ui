@@ -35,12 +35,13 @@ $overlay-max-height: 23rem !default;
       background: $transparent;
       align-items: center;
       padding: 0.5rem 1rem;
+      @include typo-interface-medium-normal;
+      color: $ground-reversed;
       &:hover:not(.bao-dropdown-menu-item-disabled){
         background-color: $highlight-light;
         cursor: pointer;
       }
       .bao-icon {
-        margin: 0.5;
         width: $icon-size;
         height: $icon-size;
         flex-shrink: 0;
@@ -50,6 +51,7 @@ $overlay-max-height: 23rem !default;
           display: flex;
           flex-basis: 100%;
           flex-direction: column;
+          padding-left: 1rem;
         > .bao-dropdown-menu-label {
           @include typo-interface-medium-normal;
           color: $ground-reversed; 
@@ -61,6 +63,7 @@ $overlay-max-height: 23rem !default;
       }
       &.bao-dropdown-menu-item-disabled {
         cursor: not-allowed;
+        color: $neutral-tertiary ;
         & .bao-dropdown-menu-label{
           color: $neutral-tertiary ;
         }

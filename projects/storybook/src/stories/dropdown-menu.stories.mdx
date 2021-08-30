@@ -26,25 +26,17 @@ import { BaoModule, BaoDropDownMenuComponent } from 'core-components-angular-lib
             </button>
             <bao-dropdown-menu [triggerOrigin]="trigger" class="visible-scrollbar" [(isOpen)]="isOpen">
               <ul>
-                <li bao-dropdown-menu-item [isDisabled]="false">                  
-                    <bao-dropdown-menu-label>
+                <li bao-dropdown-menu-item >                  
                       {{ inProgress }}
-                    </bao-dropdown-menu-label>
                 </li>
                 <li bao-dropdown-menu-item >                  
-                    <bao-dropdown-menu-label>
                       {{ onBreak }}
-                    </bao-dropdown-menu-label>
                 </li>
                 <li bao-dropdown-menu-item >                  
-                    <bao-dropdown-menu-label>
                       {{ inReview }}
-                    </bao-dropdown-menu-label>
                 </li>
                 <li bao-dropdown-menu-item >                  
-                    <bao-dropdown-menu-label>
                       {{ approved }}
-                    </bao-dropdown-menu-label>
                 </li>
               </ul>
             </bao-dropdown-menu>
@@ -74,64 +66,40 @@ import { BaoModule, BaoDropDownMenuComponent } from 'core-components-angular-lib
             <bao-dropdown-menu [triggerOrigin]="trigger" class="visible-scrollbar" [(isOpen)]="isOpen">
               <ul>
                <li bao-dropdown-menu-item >                  
-                    <bao-dropdown-menu-label>
                       {{ label }}
-                    </bao-dropdown-menu-label>
                 </li>
                 <li bao-dropdown-menu-item >                  
-                    <bao-dropdown-menu-label>
                       {{ label}}
-                    </bao-dropdown-menu-label>
                 </li>
                 <li bao-dropdown-menu-item >                  
-                    <bao-dropdown-menu-label>
                       {{ label }}
-                    </bao-dropdown-menu-label>
                 </li>
                 <li bao-dropdown-menu-item >                  
-                    <bao-dropdown-menu-label>
                       {{ label }}
-                    </bao-dropdown-menu-label>
                 </li>               
                 <li bao-dropdown-menu-item >                  
-                    <bao-dropdown-menu-label>
                       {{ label }}
-                    </bao-dropdown-menu-label>
                 </li>
                 <li bao-dropdown-menu-item >                  
-                    <bao-dropdown-menu-label>
                       {{ label }}
-                    </bao-dropdown-menu-label>
                 </li>
                 <li bao-dropdown-menu-item >                  
-                    <bao-dropdown-menu-label>
                       {{ label }}
-                    </bao-dropdown-menu-label>
                 </li>
                 <li bao-dropdown-menu-item >                  
-                    <bao-dropdown-menu-label>
                       {{ label }}
-                    </bao-dropdown-menu-label>
                 </li>
                <li bao-dropdown-menu-item >                  
-                    <bao-dropdown-menu-label>
                       {{ label }}
-                    </bao-dropdown-menu-label>
                 </li>
                 <li bao-dropdown-menu-item >                  
-                    <bao-dropdown-menu-label>
                       {{ label }}
-                    </bao-dropdown-menu-label>
                 </li>
                 <li bao-dropdown-menu-item >                  
-                    <bao-dropdown-menu-label>
                       {{ label }}
-                    </bao-dropdown-menu-label>
                 </li>
                 <li bao-dropdown-menu-item >                  
-                    <bao-dropdown-menu-label>
                       {{ label }}
-                    </bao-dropdown-menu-label>
                 </li>
               </ul>
             </bao-dropdown-menu>
@@ -246,21 +214,15 @@ import { BaoModule, BaoDropDownMenuComponent } from 'core-components-angular-lib
               <ul>
                 <li bao-dropdown-menu-item [isDisabled]="true">
                   <bao-icon svgIcon="icon-copy" color="tertiary"></bao-icon>
-                    <bao-dropdown-menu-label >
                       {{ copy }}
-                    </bao-dropdown-menu-label> 
                 </li>   
                 <li bao-dropdown-menu-item> 
                   <bao-icon svgIcon="icon-archive"></bao-icon> 
-                    <bao-dropdown-menu-label>
                       {{ archive }}
-                    </bao-dropdown-menu-label>
                 </li>
                 <li bao-dropdown-menu-item [isDisabled]="true"> 
                   <bao-icon svgIcon="icon-trash"></bao-icon> 
-                    <bao-dropdown-menu-label >
                       {{ delete }}
-                    </bao-dropdown-menu-label>
                 </li>
               </ul>
             </bao-dropdown-menu>
