@@ -26,7 +26,7 @@ import { BaoModule, BaoDropDownMenuComponent } from 'core-components-angular-lib
             </button>
             <bao-dropdown-menu [triggerOrigin]="trigger" class="visible-scrollbar" [isOpen]="isOpen">
               <ul>
-                <li bao-dropdown-menu-item >                  
+                <li bao-dropdown-menu-item [isDisabled]="false">                  
                     <bao-dropdown-menu-label>
                       {{ inProgress }}
                     </bao-dropdown-menu-label>
@@ -42,11 +42,9 @@ import { BaoModule, BaoDropDownMenuComponent } from 'core-components-angular-lib
                     </bao-dropdown-menu-label>
                 </li>
                 <li bao-dropdown-menu-item >                  
-                  <bao-dropdown-menu-content >
                     <bao-dropdown-menu-label>
                       {{ approved }}
                     </bao-dropdown-menu-label>
-                  </bao-dropdown-menu-content> 
                 </li>
               </ul>
             </bao-dropdown-menu>

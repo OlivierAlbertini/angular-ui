@@ -50,15 +50,9 @@ $overlay-max-height: 23rem !default;
           display: flex;
           flex-basis: 100%;
           flex-direction: column;
-          > a:link {
-            border-bottom: none;
-          }
-          > a:visited {
-            @include typo-interface-medium-normal;
-          }
         > .bao-dropdown-menu-label {
           @include typo-interface-medium-normal;
-          color: $ground-reversed; // a revoir
+          color: $ground-reversed; 
         }
         > .bao-dropdown-menu-description {
           @include typo-interface-small;
@@ -73,6 +67,17 @@ $overlay-max-height: 23rem !default;
         & .bao-dropdown-menu-description{
           color: $neutral-tertiary;
         }
+      }
+      > .bao-dropdown-menu-label {
+        @include typo-interface-medium-normal;
+        color: $ground-reversed;
+        flex-basis: 100%; 
+      }
+      > a:link {
+        border-bottom: none;
+      }
+      > a:visited {
+        @include typo-interface-medium-normal;
       }
     }
     > .bao-dropdown-menu-title {
