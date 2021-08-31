@@ -63,11 +63,6 @@ export class BaoDropDownMenuItemComponent {
 export class BaoDropDownMenuTitleComponent {}
 
 @Directive({
-  selector: 'bao-dropdown-menu-checkbox, [bao-dropdown-menu-checkbox], [baoDropdownMenuCheckbox]',
-  host: { class: 'bao-dropdown-menu-checkbox' }
-})
-export class BaoDropDownMenuCheckboxComponent {}
-@Directive({
   selector: 'bao-dropdown-menu-label, [bao-dropdown-menu-label], [baoDropdownMenuLabel]',
   host: { class: 'bao-dropdown-menu-label' }
 })

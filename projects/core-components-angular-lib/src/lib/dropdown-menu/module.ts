@@ -4,7 +4,6 @@ import { NgModule } from '@angular/core';
 import { BaoIconModule } from '../icon';
 import {
   BaoDividerComponent,
-  BaoDropDownMenuCheckboxComponent,
   BaoDropDownMenuComponent,
   BaoDropDownMenuContentComponent,
   BaoDropDownMenuDescriptionComponent,
@@ -21,7 +20,6 @@ const DROPDOWN_MENU_DIRECTIVES = [
   BaoDropDownMenuTitleComponent,
   BaoDropDownMenuContentComponent,
   BaoDividerComponent,
-  BaoDropDownMenuCheckboxComponent
 ];
 
 @NgModule({
