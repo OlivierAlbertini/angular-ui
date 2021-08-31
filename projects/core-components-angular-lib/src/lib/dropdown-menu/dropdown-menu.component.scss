@@ -80,6 +80,7 @@ $overlay-max-height: 23rem !default;
         color: $primary;
       }
       > a:link {
+        flex-basis: 100%;
         border-bottom: none;
       }
       > a:visited {
