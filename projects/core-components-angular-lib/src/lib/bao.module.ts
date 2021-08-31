@@ -4,11 +4,12 @@ import { BaoBreadcrumbModule } from './breadcrumb/module';
 import { BaoButtonModule } from './button/module';
 import { BaoCardModule } from './card/module';
 import { BaoDropDownMenuModule } from './dropdown-menu/module';
+import { BaoHeaderInfoModule } from './header-info/module';
 import { BaoIconModule } from './icon/module';
 import { BaoTagModule } from './tag/module';
 
 @NgModule({
-  imports: [BaoIconModule, BaoButtonModule, BaoAlertModule, BaoCardModule, BaoBreadcrumbModule, BaoDropDownMenuModule],
+  imports: [BaoIconModule, BaoButtonModule, BaoAlertModule, BaoCardModule, BaoBreadcrumbModule],
   exports: [
     BaoIconModule,
     BaoButtonModule,
@@ -16,10 +17,10 @@ import { BaoTagModule } from './tag/module';
     BaoBreadcrumbModule,
     BaoCardModule,
     BaoTagModule,
-    BaoDropDownMenuModule
+    BaoDropDownMenuModule,
+    BaoHeaderInfoModule
     // TODO: reactivate once component does not depend on global css BaoBadgeModule,
     // TODO: reactivate once component does not depend on global css BaoSnackBarModule,
-    // TODO: reactivate once component does not depend on global css BaoHeaderInfoModule
   ]
 })
 export class BaoModule {}
