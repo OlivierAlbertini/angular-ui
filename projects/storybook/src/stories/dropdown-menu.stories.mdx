@@ -26,18 +26,10 @@ import { BaoModule, BaoDropDownMenuComponent } from 'core-components-angular-lib
             </button>
             <bao-dropdown-menu [triggerOrigin]="trigger" class="visible-scrollbar" [(isOpen)]="isOpen">
               <ul>
-                <li bao-dropdown-menu-item >                  
-                      {{ inProgress }}
-                </li>
-                <li bao-dropdown-menu-item >                  
-                      {{ onBreak }}
-                </li>
-                <li bao-dropdown-menu-item >                  
-                      {{ inReview }}
-                </li>
-                <li bao-dropdown-menu-item >                  
-                      {{ approved }}
-                </li>
+                <li bao-dropdown-menu-item > {{ inProgress }} </li>
+                <li bao-dropdown-menu-item > {{ onBreak }} </li>
+                <li bao-dropdown-menu-item > {{ inReview }} </li>
+                <li bao-dropdown-menu-item > {{ approved }} </li>
               </ul>
             </bao-dropdown-menu>
     `,
@@ -52,7 +44,6 @@ import { BaoModule, BaoDropDownMenuComponent } from 'core-components-angular-lib
   </Story>
 </Preview>
 
-
 ## with scrolbar
 
 <Preview>
@@ -65,42 +56,18 @@ import { BaoModule, BaoDropDownMenuComponent } from 'core-components-angular-lib
             </button>
             <bao-dropdown-menu [triggerOrigin]="trigger" class="visible-scrollbar" [(isOpen)]="isOpen">
               <ul>
-               <li bao-dropdown-menu-item >                  
-                      {{ label }}
-                </li>
-                <li bao-dropdown-menu-item >                  
-                      {{ label}}
-                </li>
-                <li bao-dropdown-menu-item >                  
-                      {{ label }}
-                </li>
-                <li bao-dropdown-menu-item >                  
-                      {{ label }}
-                </li>               
-                <li bao-dropdown-menu-item >                  
-                      {{ label }}
-                </li>
-                <li bao-dropdown-menu-item >                  
-                      {{ label }}
-                </li>
-                <li bao-dropdown-menu-item >                  
-                      {{ label }}
-                </li>
-                <li bao-dropdown-menu-item >                  
-                      {{ label }}
-                </li>
-               <li bao-dropdown-menu-item >                  
-                      {{ label }}
-                </li>
-                <li bao-dropdown-menu-item >                  
-                      {{ label }}
-                </li>
-                <li bao-dropdown-menu-item >                  
-                      {{ label }}
-                </li>
-                <li bao-dropdown-menu-item >                  
-                      {{ label }}
-                </li>
+                <li bao-dropdown-menu-item >{{ label }}</li>
+                <li bao-dropdown-menu-item >{{ label}}</li>
+                <li bao-dropdown-menu-item >{{ label }}</li>
+                <li bao-dropdown-menu-item >{{ label }}</li>               
+                <li bao-dropdown-menu-item >{{ label }}</li>
+                <li bao-dropdown-menu-item >{{ label }}</li>
+                <li bao-dropdown-menu-item >{{ label }}</li>
+                <li bao-dropdown-menu-item >{{ label }}</li>
+                <li bao-dropdown-menu-item >{{ label }}</li>
+                <li bao-dropdown-menu-item >{{ label }}</li>
+                <li bao-dropdown-menu-item >{{ label }}</li>
+                <li bao-dropdown-menu-item >{{ label }}</li>
               </ul>
             </bao-dropdown-menu>
     `,
@@ -125,9 +92,9 @@ import { BaoModule, BaoDropDownMenuComponent } from 'core-components-angular-lib
             <bao-dropdown-menu [triggerOrigin]="trigger" [(isOpen)]="isOpen" >
               <ul>
                 <li bao-dropdown-menu-title aria-current="page">{{ title }}</li>
-                <li bao-dropdown-menu-item > {{ label }}</li>
-                <li bao-dropdown-menu-item > {{ label }}</li>
-                <li bao-dropdown-menu-item > {{ label }}</li>
+                <li bao-dropdown-menu-item >{{ label }}</li>
+                <li bao-dropdown-menu-item >{{ label }}</li>
+                <li bao-dropdown-menu-item >{{ label }}</li>
               </ul>
             </bao-dropdown-menu>
     `,
@@ -155,22 +122,13 @@ import { BaoModule, BaoDropDownMenuComponent } from 'core-components-angular-lib
             <bao-dropdown-menu [triggerOrigin]="trigger" [(isOpen)]="isOpen">
               <ul>
                 <li bao-dropdown-menu-item>
-                  <bao-icon svgIcon="icon-copy"></bao-icon>
-                    <bao-dropdown-menu-label>
-                      {{ copy }}
-                    </bao-dropdown-menu-label> 
+                  <bao-icon svgIcon="icon-copy"></bao-icon>{{ copy }}
                 </li>
                 <li bao-dropdown-menu-item>
-                  <bao-icon svgIcon="icon-user"></bao-icon>
-                    <bao-dropdown-menu-label>
-                      {{ assign }}
-                    </bao-dropdown-menu-label> 
+                  <bao-icon svgIcon="icon-user"></bao-icon>{{ assign }}
                 </li>
                 <li bao-dropdown-menu-item>
-                  <bao-icon svgIcon="icon-folder"></bao-icon>
-                    <bao-dropdown-menu-label>
-                      {{ move }}
-                    </bao-dropdown-menu-label> 
+                  <bao-icon svgIcon="icon-folder"></bao-icon>{{ move }}
                 </li>
               </ul>
             </bao-dropdown-menu>
@@ -178,7 +136,7 @@ import { BaoModule, BaoDropDownMenuComponent } from 'core-components-angular-lib
       props: {
         isOpen: false,
         actions:'Actions',
-        copy:'Dupliquer',
+        copy:'Copier',
         assign:'Assigner à ',
         move:'Deplacer dans'
       }
@@ -201,16 +159,13 @@ import { BaoModule, BaoDropDownMenuComponent } from 'core-components-angular-lib
             <bao-dropdown-menu [triggerOrigin]="trigger" [(isOpen)]="isOpen">
               <ul>
                 <li bao-dropdown-menu-item [isDisabled]="true">
-                  <bao-icon svgIcon="icon-copy" color="tertiary"></bao-icon>
-                      {{ copy }}
+                  <bao-icon svgIcon="icon-copy" color="tertiary"></bao-icon>{{ copy }}
                 </li>   
                 <li bao-dropdown-menu-item> 
-                  <bao-icon svgIcon="icon-archive"></bao-icon> 
-                      {{ archive }}
+                  <bao-icon svgIcon="icon-archive"></bao-icon>{{ archive }}
                 </li>
                 <li bao-dropdown-menu-item [isDisabled]="true"> 
-                  <bao-icon svgIcon="icon-trash"></bao-icon> 
-                      {{ delete }}
+                  <bao-icon svgIcon="icon-trash"></bao-icon>{{ delete }}
                 </li>
               </ul>
             </bao-dropdown-menu>
