@@ -306,13 +306,13 @@ import { BaoModule, BaoDropDownMenuComponent } from 'core-components-angular-lib
             <bao-dropdown-menu aria-current="page" [triggerOrigin]="trigger" [(isOpen)]="isOpen">
               <ul>
                 <li bao-dropdown-menu-item [isCurrent]="true">
-                  <a bao-dropdown-menu-label href="#">{{ label }}</a>
+                  <a bao-dropdown-menu-label href="#">{{ link }}</a>
                 </li>
                 <li bao-dropdown-menu-item>
-                  <a bao-dropdown-menu-label href="#" >{{ label }}</a>
+                  <a bao-dropdown-menu-label href="#" >{{ link }}</a>
                 </li> 
                 <li bao-dropdown-menu-item>
-                  <a bao-dropdown-menu-label href="#">{{ label }}</a>
+                  <a bao-dropdown-menu-label href="#">{{ link }}</a>
                 </li>   
               </ul>
             </bao-dropdown-menu>
@@ -320,7 +320,7 @@ import { BaoModule, BaoDropDownMenuComponent } from 'core-components-angular-lib
       props: {
         isOpen: false,
         status: 'Statut',
-        label: 'Label',
+        link: 'Link',
       }
     }}
   </Story>
