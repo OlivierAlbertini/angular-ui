@@ -24,12 +24,12 @@ $tag-colors: (
         background-light: $warning-light,
         background-strong: $warning-reversed,
         color-light: $warning,
-        color-strong: $ground-reversed
+        color-strong: $primary
     ),
     neutral: (
         background-light: $underground-2,
-        background-strong: $ground-reversed,
-        color-light: $ground-reversed,
+        background-strong: $primary,
+        color-light: $primary,
         color-strong: $white
     )
 );
