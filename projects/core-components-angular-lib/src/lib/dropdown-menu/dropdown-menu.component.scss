@@ -6,7 +6,6 @@
 @import '../core/overlay';
 
 $icon-size: 1.5rem;
-// menu width must be a multiple of 56px
 $overlay-min-width: 16rem !default;
 $overlay-max-width: 32rem !default;
 $overlay-max-height: 23rem !default;
@@ -37,13 +36,14 @@ $overlay-max-height: 23rem !default;
       background: $transparent;
       align-items: center;
       padding: 0.5rem 1rem;
+      color: $ground-reversed;
       @include typo-interface-medium-normal;
       &:hover:not(.bao-dropdown-menu-item-disabled) {
-        background-color: #F8F9FA;
+        background-color: $neutral-underground;
         cursor: pointer;
       }
       &.bao-dropdown-menu-current-page{
-        background-color:$highlight-light;
+        background-color: $highlight-light;
       }
       .bao-icon {
         width: $icon-size;

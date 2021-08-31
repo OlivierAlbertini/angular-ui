@@ -125,21 +125,9 @@ import { BaoModule, BaoDropDownMenuComponent } from 'core-components-angular-lib
             <bao-dropdown-menu [triggerOrigin]="trigger" [(isOpen)]="isOpen" >
               <ul>
                 <li bao-dropdown-menu-title aria-current="page">{{ title }}</li>
-                <li bao-dropdown-menu-item >                  
-                    <bao-dropdown-menu-label>
-                      {{ label }}
-                    </bao-dropdown-menu-label>
-                </li>
-                <li bao-dropdown-menu-item >                  
-                    <bao-dropdown-menu-label>
-                      {{ label }}
-                    </bao-dropdown-menu-label>
-                </li>
-              <li bao-dropdown-menu-item >                  
-                  <bao-dropdown-menu-label>
-                    {{ label }}
-                  </bao-dropdown-menu-label>
-              </li>
+                <li bao-dropdown-menu-item > {{ label }}</li>
+                <li bao-dropdown-menu-item > {{ label }}</li>
+                <li bao-dropdown-menu-item > {{ label }}</li>
               </ul>
             </bao-dropdown-menu>
     `,
@@ -315,22 +303,16 @@ import { BaoModule, BaoDropDownMenuComponent } from 'core-components-angular-lib
             size="medium" style="margin-right: 1rem;">    
               <bao-icon svgIcon="icon-chevron-down"></bao-icon>
             </button>
-            <bao-dropdown-menu [triggerOrigin]="trigger" [(isOpen)]="isOpen">
+            <bao-dropdown-menu aria-current="page" [triggerOrigin]="trigger" [(isOpen)]="isOpen">
               <ul>
                 <li bao-dropdown-menu-item [isCurrent]="true">
-                    <a bao-dropdown-menu-label href="#"  aria-current="page">
-                      {{ label }}
-                    </a>
+                  <a bao-dropdown-menu-label href="#">{{ label }}</a>
                 </li>
                 <li bao-dropdown-menu-item>
-                    <a bao-dropdown-menu-label href="#" >
-                      {{ label }}
-                    </a>
+                  <a bao-dropdown-menu-label href="#" >{{ label }}</a>
                 </li> 
                 <li bao-dropdown-menu-item>
-                    <a bao-dropdown-menu-label href="#">
-                      {{ label }}
-                    </a>
+                  <a bao-dropdown-menu-label href="#">{{ label }}</a>
                 </li>   
               </ul>
             </bao-dropdown-menu>
