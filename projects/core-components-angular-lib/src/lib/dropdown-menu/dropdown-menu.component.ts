@@ -1,3 +1,4 @@
+import { CdkOverlayOrigin } from '@angular/cdk/overlay';
 import {
   ChangeDetectionStrategy,
   Component,
@@ -23,7 +24,7 @@ export class BaoDropDownMenuComponent {
   /**
    * The origin for the dropdown-menu
    */
-  @Input() public triggerOrigin: any;
+  @Input() public triggerOrigin: CdkOverlayOrigin;
   /**
    * Should the dropdown menu be closed when the user clicks outside the menu
    */
@@ -50,11 +51,10 @@ export class BaoDividerComponent {}
  */
 @Directive({
   selector: 'bao-dropdown-menu-item, [bao-dropdown-menu-item], [baoDropdownMenuItem]',
-  host: { class: 'bao-dropdown-menu-item', '[class.bao-dropdown-menu-item-disabled]': 'isDisabled===true','[class.bao-dropdown-menu-current-page]': 'isCurrent===true' }
+  host: { class: 'bao-dropdown-menu-item', '[class.bao-dropdown-menu-item-disabled]': 'disabled===true' }
 })
 export class BaoDropDownMenuItemComponent {
-  @Input() public isDisabled = false;
-  @Input() public isCurrent = false;
+  @Input() public disabled = false;
 }
 @Directive({
   selector: 'bao-dropdown-menu-title, [bao-dropdown-menu-title], [baoDropdownMenuTitle]',

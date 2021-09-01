@@ -5,14 +5,14 @@ $font-weight-bold: 700;
 
 @mixin typo-heading-1 {
   font-weight: 700;
-  color: $primary;
+  color: $ground-reversed;
   font-size: 2.5rem;
   line-height: 3.5rem;
 }
 
 @mixin typo-heading-2 {
   font-weight: 700;
-  color: $primary;
+  color: $ground-reversed;
   font-size: 2rem;
   line-height: 2.5rem;
 }

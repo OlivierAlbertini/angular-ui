@@ -18,7 +18,7 @@ $overlay-max-height: 23rem !default;
   min-width: $overlay-min-width;
   max-width: $overlay-max-width;
   display: inline-block;
-  padding: 0rem;
+  padding: 0;
   background: $white;
   box-shadow: 0 0.5rem 2rem 0 rgba(0, 0, 0, 0.1);
   border-radius: 0.25rem;
@@ -42,9 +42,9 @@ $overlay-max-height: 23rem !default;
         background-color: $neutral-underground;
         cursor: pointer;
       }
-      &.bao-dropdown-menu-current-page{
+      /*&.bao-dropdown-menu-current-page{
         background-color: $highlight-light;
-      }
+      }*/
       .bao-icon {
         width: $icon-size;
         height: $icon-size;
@@ -86,6 +86,9 @@ $overlay-max-height: 23rem !default;
       > a:visited {
         @include typo-interface-medium-normal;
       }
+    }
+    [aria-current]:not([aria-current="false"]) {
+      background-color: $highlight-light;
     }
     > .bao-dropdown-menu-title {
       @include typo-interface-medium-bold;

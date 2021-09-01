@@ -21,7 +21,7 @@ import { BaoModule, BaoDropDownMenuComponent } from 'core-components-angular-lib
     {{
       component: BaoDropDownMenuComponent,
       template: `
-            <button bao-button aria-label="dropmenu" aria-expanded="true" (click)="isOpen = !isOpen" type="utility" level="tertiary" cdkOverlayOrigin #trigger="cdkOverlayOrigin">
+            <button bao-button aria-label="dropmenu"  (click)="isOpen = !isOpen" type="utility" level="tertiary" cdkOverlayOrigin #trigger="cdkOverlayOrigin">
               <bao-icon svgIcon="icon-more-vertical"></bao-icon>
             </button>
             <bao-dropdown-menu  [triggerOrigin]="trigger" class="visible-scrollbar" [(isOpen)]="isOpen">
@@ -47,7 +47,7 @@ import { BaoModule, BaoDropDownMenuComponent } from 'core-components-angular-lib
     {{
       component: BaoDropDownMenuComponent,
       template: `
-            <button bao-button aria-label="dropmenu" aria-expanded="true" (click)="isOpen = !isOpen" type="utility" level="tertiary" cdkOverlayOrigin #trigger="cdkOverlayOrigin">
+            <button bao-button aria-label="dropmenu" (click)="isOpen = !isOpen" type="utility" level="tertiary" cdkOverlayOrigin #trigger="cdkOverlayOrigin">
               <bao-icon svgIcon="icon-chevron-right"></bao-icon>
             </button>
             <bao-dropdown-menu  [triggerOrigin]="trigger" class="visible-scrollbar" [(isOpen)]="isOpen">
@@ -79,12 +79,12 @@ import { BaoModule, BaoDropDownMenuComponent } from 'core-components-angular-lib
     {{
       component: BaoDropDownMenuComponent,
       template: `
-            <button bao-button aria-label="dropmenu" aria-expanded="true" (click)="isOpen = !isOpen"  type="utility" level="tertiary" cdkOverlayOrigin #trigger="cdkOverlayOrigin">
+            <button bao-button aria-label="dropmenu" (click)="isOpen = !isOpen"  type="utility" level="tertiary" cdkOverlayOrigin #trigger="cdkOverlayOrigin">
               <bao-icon svgIcon="icon-chevron-up"></bao-icon>
             </button>
             <bao-dropdown-menu [triggerOrigin]="trigger" [(isOpen)]="isOpen" >
               <ul>
-                <li bao-dropdown-menu-title aria-current="page">Title</li>
+                <li bao-dropdown-menu-title >Title</li>
                 <li bao-dropdown-menu-item >Label</li>
                 <li bao-dropdown-menu-item >Label</li>
                 <li bao-dropdown-menu-item >Label</li>
@@ -138,20 +138,20 @@ import { BaoModule, BaoDropDownMenuComponent } from 'core-components-angular-lib
     {{
       component: BaoDropDownMenuComponent,
       template: `
-           <button bao-button (click)="isOpen = !isOpen" aria-expanded="true" type="editorial" level="primary" cdkOverlayOrigin #trigger="cdkOverlayOrigin" 
+           <button bao-button (click)="isOpen = !isOpen" type="editorial" level="primary" cdkOverlayOrigin #trigger="cdkOverlayOrigin" 
             size="medium" style="margin-right: 1rem;">
               <span>Actions</span>
               <bao-icon svgIcon="icon-chevron-up"></bao-icon>
             </button>
             <bao-dropdown-menu  [triggerOrigin]="trigger" [(isOpen)]="isOpen">
               <ul>
-                <li bao-dropdown-menu-item [isDisabled]="true">
+                <li bao-dropdown-menu-item [disabled]="true">
                   <bao-icon svgIcon="icon-copy" color="tertiary"></bao-icon>Copy
                 </li>   
                 <li bao-dropdown-menu-item> 
                   <bao-icon svgIcon="icon-archive"></bao-icon>Archive
                 </li>
-                <li bao-dropdown-menu-item [isDisabled]="true"> 
+                <li bao-dropdown-menu-item [disabled]="true"> 
                   <bao-icon svgIcon="icon-trash"></bao-icon>Delete
                 </li>
               </ul>
@@ -171,7 +171,7 @@ import { BaoModule, BaoDropDownMenuComponent } from 'core-components-angular-lib
     {{
       component: BaoDropDownMenuComponent,
       template: `
-            <button bao-button aria-label="dropmenu" aria-expanded="true" (click)="isOpen = !isOpen" type="utility" level="tertiary" cdkOverlayOrigin #trigger="cdkOverlayOrigin">
+            <button bao-button aria-label="dropmenu" (click)="isOpen = !isOpen" type="utility" level="tertiary" cdkOverlayOrigin #trigger="cdkOverlayOrigin">
               <bao-icon svgIcon="icon-more-vertical"></bao-icon>
             </button>
             <bao-dropdown-menu [triggerOrigin]="trigger" [(isOpen)]="isOpen">
@@ -230,13 +230,13 @@ import { BaoModule, BaoDropDownMenuComponent } from 'core-components-angular-lib
     {{
       component: BaoDropDownMenuComponent,
       template: `
-            <button bao-button aria-label="dropmenu"  aria-expanded="true"(click)="isOpen = !isOpen" type="utility" level="tertiary" cdkOverlayOrigin #trigger="cdkOverlayOrigin" 
+            <button bao-button aria-label="dropmenu" (click)="isOpen = !isOpen" type="utility" level="tertiary" cdkOverlayOrigin #trigger="cdkOverlayOrigin" 
             size="medium" style="margin-right: 1rem;">    
               <bao-icon svgIcon="icon-chevron-down"></bao-icon>
             </button>
-            <bao-dropdown-menu aria-current="page" [triggerOrigin]="trigger" [(isOpen)]="isOpen">
+            <bao-dropdown-menu [triggerOrigin]="trigger" [(isOpen)]="isOpen">
               <ul>
-                <li bao-dropdown-menu-item [isCurrent]="true">
+                <li bao-dropdown-menu-item aria-current="page">
                   <a bao-dropdown-menu-label href="#">Link</a>
                 </li>
                 <li bao-dropdown-menu-item>
