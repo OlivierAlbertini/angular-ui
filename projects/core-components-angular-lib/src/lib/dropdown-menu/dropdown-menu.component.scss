@@ -42,9 +42,7 @@ $overlay-max-height: 23rem !default;
         background-color: $neutral-underground;
         cursor: pointer;
       }
-      /*&.bao-dropdown-menu-current-page{
-        background-color: $highlight-light;
-      }*/
+
       .bao-icon {
         width: $icon-size;
         height: $icon-size;
@@ -87,7 +85,7 @@ $overlay-max-height: 23rem !default;
         @include typo-interface-medium-normal;
       }
     }
-    [aria-current]:not([aria-current="false"]) {
+    [aria-current]{
       background-color: $highlight-light;
     }
     > .bao-dropdown-menu-title {
